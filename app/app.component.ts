@@ -8,7 +8,8 @@ import { HeroService } from './hero.service';
   selector: 'my-app',
   template: `
             <h1>{{title}}</h1>
-            <h2>My Heroes</h2>
+            <h2 *ngIf="heroes">My Heroes</h2>
+            <h2 *ngIf="!heroes"> Heroes not arrived </h2>
             <ul class="heroes">
               <li *ngFor="let hero of heroes"
                [class.selected]="hero === selectedHero"
@@ -78,7 +79,7 @@ export class AppComponent implements OnInit {
   constructor(private heroService: HeroService) { }
 
   getHeroes(): void {
-    this.heroService.getHeroes().then(heroes => this.heroes = heroes);
+    this.heroService.getHeroesSlowly().then(heroes => this.heroes = heroes);
   }
 
   ngOnInit(): void {
