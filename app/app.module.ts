@@ -2,7 +2,7 @@ import { NgModule }      from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule }   from '@angular/forms';
 import { HttpModule } from '@angular/http';
-import { AngularFireModule } from 'angularfire2';
+// import { AngularFireModule } from 'angularfire2';
 
 import './rxjs-extentions';
 
@@ -33,7 +33,7 @@ export const firebaseConfig = {
     FormsModule,
     HttpModule,
     InMemoryWebApiModule.forRoot(InMemoryDataService),
-    AngularFireModule.initializeApp(firebaseConfig),
+    // AngularFireModule.initializeApp(firebaseConfig),
     routing
   ],
   declarations: [
